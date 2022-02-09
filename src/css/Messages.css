@@ -3,12 +3,9 @@
     flex-direction: column;
     height:auto;
     flex-grow:1;
-    border-style: solid;
-    border-color: #554556;
-    border-radius:5px;
-    background-color: #9CDC9C;
     justify-content: start;
     padding: 5px;
     max-height:100%;
     flex-grow: 1;
+    overflow-y: scroll;
 }
