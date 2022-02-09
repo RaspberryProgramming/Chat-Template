@@ -1,0 +1,28 @@
+.UserList {
+    background-color: #8CCC9C;
+    height: 100%;
+    max-height: 100%;
+    display:flex;
+    flex-direction: column;
+}
+
+.UserList .user {
+    color: #4D2FDC;
+    font-weight: 500;
+    margin-top:5px;
+}
+
+.UserList .title {
+    font-weight: 600;
+    font-size: 24px;
+    background-color: #7CBC8C;
+}
+
+.UserList .list {
+    max-height:100%;
+    flex-grow:1;
+    display:flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    scrollbar-color: #7CBC8C #8CCC9C;
+}
