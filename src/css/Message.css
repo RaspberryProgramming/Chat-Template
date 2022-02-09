@@ -1,0 +1,30 @@
+.Message {
+    background-color:#8FBCAC;
+    border-radius:5px;
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
+    width: 85%;
+    margin-left:0;
+    margin-right:auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: end;
+}
+
+.Message.self {
+    flex-direction: row-reverse;
+    margin-left:auto;
+    margin-right:0;
+    text-align:start;
+}
+
+.author {
+    background-color: #9FCCDC;
+    padding:5px;
+    border-radius:5px;
+}
+
+.text {
+    padding:5px;
+}
