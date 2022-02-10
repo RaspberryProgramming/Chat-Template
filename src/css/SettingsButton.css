@@ -1,0 +1,8 @@
+.SettingsButton {
+    background-color: #7FAC6C;
+    padding: 5px;
+}
+
+.SettingsButton:hover {
+    background-color: #71A161;
+}

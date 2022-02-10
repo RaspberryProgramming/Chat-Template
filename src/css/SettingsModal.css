@@ -1,0 +1,28 @@
+.SettingsModal {
+    width:20%;
+    height: 0;
+    background-color: #4C9C5C;
+    transition: height 1000ms;
+    position:absolute;
+    bottom:0;
+    left:0;
+    overflow:hidden;
+    display:flex;
+    flex-direction: column;
+}
+
+.SettingsModal.enabled {
+    z-index: 10;
+    height: 100%;
+    width:20%;
+    transition: height 500ms;
+}
+
+.SettingsModal * {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.SettingsModal .close {
+    margin-left: auto;
+}
