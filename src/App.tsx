@@ -3,6 +3,7 @@ import Messages from './components/Messages';
 import UserList from './components/UserList';
 import SettingsButton from './components/SettingsButton';
 import SettingsModal from './components/SettingsModal';
+import MessageBox from './components/MessageBox';
 import React, { useState } from 'react';
 
 function App() {
@@ -18,7 +19,7 @@ function App() {
       </div>
       <div className="col W-80">
         <Messages />
-        <input/>
+        <MessageBox placeholder='Type Message Here...'/>
       </div>
     </div>
   );

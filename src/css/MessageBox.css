@@ -1,0 +1,19 @@
+.MessageBox {
+    margin: 10px;
+    width: auto;
+    display:flex;
+}
+
+.MessageBox input[type=text] {
+    background-color: #7CCC8C;
+    border: none;
+    border-radius: 5px;
+    width: 10rem;
+    padding: 5px;
+    transition: width 0.5s ease-in;
+}
+
+.MessageBox input[type=text]:focus {
+    transition: width 0.5s ease-out;
+    width:100%;
+}
