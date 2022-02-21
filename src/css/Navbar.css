@@ -15,23 +15,28 @@
     }
 
     .Navbar .options {
+        display:flex;
         height:0;
-        display:none;
+        width:100%;
+        z-index: 2;
+        position: absolute;
+        top:45px;
         background-color:#7CBD8C;
+        transition: height 0.5s ease-out;
+        flex-shrink:0;
+        flex-grow:0;
+        overflow:hidden;
     }
 
     .Navbar .options .item {
-        
+        width:100%;
     }
 
     .Navbar .options.enabled {
         display:flex;
-        top:45px;
-        position: absolute;
         height:75vh;
-        width:100%;
-        z-index: 2;
         justify-content: center;
+        transition: height 0.5s ease-out;
 
     }
 
@@ -40,8 +45,8 @@
         flex-direction: column;
         padding: 5px;
         justify-content: space-around;
-        height: 25px;
-        width: 35px;
+        height: 35px;
+        width: 45px;
         background-color:#7CCD9C;
         border-radius:5px;
         margin: 5px;

@@ -1,8 +1,10 @@
 .SettingsButton {
     width:100%;
     display:flex;
-    background-color: #7FAC6C;
+    background-color: #71AF61;
     padding: 5px;
+    align-items: center;
+    justify-content: center;
 }
 
 .SettingsButton:hover {

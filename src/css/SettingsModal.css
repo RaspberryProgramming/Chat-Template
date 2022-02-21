@@ -26,3 +26,9 @@
 .SettingsModal .close {
     margin-left: auto;
 }
+
+@media only screen and (max-width: 600px) {
+    .SettingsModal {
+        width:100vw !important;
+    }
+}

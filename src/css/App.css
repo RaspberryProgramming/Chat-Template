@@ -9,6 +9,10 @@
   scrollbar-color: #8CCC9C #9CDC9C;
 }
 
+.App * {
+  box-sizing: border-box;
+}
+
 .App .columns {
   width:100%;
   display:flex;
