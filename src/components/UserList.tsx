@@ -13,7 +13,7 @@ const UserList: FC<Props> = ({children, users}) => {
 
     return (
         <div className="UserList">
-            <div className="title">Online</div>
+            <div className="title">ONLINE</div>
             <div className="list">
                 {list}
             </div>

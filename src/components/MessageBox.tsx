@@ -1,4 +1,4 @@
-import React, {FC} from 'react';
+import React, {FC, useState} from 'react';
 import '../css/MessageBox.css';
 
 type Props = {
@@ -6,9 +6,21 @@ type Props = {
 };
 
 const MessageBox: FC<Props> = ({children, placeholder}) => {
+  const [empty, setEmpty] = useState(true);
+
+  const onChange = (event: any) => {
+    console.log(event.target.value.length > 0);
+    if (event.target.value.length > 0) {
+      setEmpty(false);
+    } else {
+      setEmpty(true);
+    }
+    
+  };
+
   return (
     <div className="MessageBox">
-      <input type='text' placeholder={placeholder}/>
+      <textarea className={empty ? 'empty':''} placeholder={placeholder} onChange={onChange}/>
     </div>
   );
 }

@@ -2,18 +2,27 @@
     margin: 10px;
     width: auto;
     display:flex;
+    height:fit-content;
 }
 
-.MessageBox input[type=text] {
+.MessageBox textarea {
     background-color: #7CCC8C;
     border: none;
     border-radius: 5px;
-    width: 10rem;
-    padding: 5px;
+    padding: 12px;
     transition: width 0.5s ease-in;
+    height: 18px;
+    width: 100%;
+    resize: none;
+    
 }
 
-.MessageBox input[type=text]:focus {
+.MessageBox .empty {
+    transition: width 0.5s ease-in;
+    width: 150px;
+}
+
+.MessageBox textarea:focus {
     transition: width 0.5s ease-out;
     width:100%;
 }
