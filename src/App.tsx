@@ -19,7 +19,7 @@ function App() {
       </div>
       <div className="col W-80">
         <Messages />
-        <MessageBox placeholder='Type Message Here...'/>
+        <MessageBox placeholder='Type Message Here...' changeFunct={(text:string)=>{console.log(text)}}/>
       </div>
     </div>
   );

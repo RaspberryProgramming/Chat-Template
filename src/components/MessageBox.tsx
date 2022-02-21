@@ -3,9 +3,10 @@ import '../css/MessageBox.css';
 
 type Props = {
     placeholder: string,
+    changeFunct: Function
 };
 
-const MessageBox: FC<Props> = ({children, placeholder}) => {
+const MessageBox: FC<Props> = ({children, placeholder, changeFunct}) => {
   const [empty, setEmpty] = useState(true);
 
   const onChange = (event: any) => {
@@ -15,6 +16,8 @@ const MessageBox: FC<Props> = ({children, placeholder}) => {
     } else {
       setEmpty(true);
     }
+
+    changeFunct(event.target.value);
     
   };
 
