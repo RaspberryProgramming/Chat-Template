@@ -19,10 +19,17 @@
 
 .MessageBox .empty {
     transition: width 0.5s ease-in;
-    width: 150px;
+    width: 25%;
+    min-width: 200px;
 }
 
 .MessageBox textarea:focus {
     transition: width 0.5s ease-out;
     width:100%;
+}
+
+@media only screen and (max-width: 600px) {
+    .MessageBox .empty {
+        width:100%;
+    }
 }

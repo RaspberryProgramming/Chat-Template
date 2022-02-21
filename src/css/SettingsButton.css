@@ -1,4 +1,6 @@
 .SettingsButton {
+    width:100%;
+    display:flex;
     background-color: #7FAC6C;
     padding: 5px;
 }
