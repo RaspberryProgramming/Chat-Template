@@ -25,7 +25,14 @@ function App() {
         </div>
         <div className="col W-80">
           <Messages />
-          <MessageBox placeholder='Type Message Here...' changeFunct={(text:string)=>{console.log(text)}}/>
+          <MessageBox placeholder='Type Message Here...'
+            keyPress={(keys:string[], submit: Function)=>{
+              if (keys.includes("Enter") && (keys.includes("ShiftRight") || keys.includes("ShiftLeft"))) {
+                submit();
+              }
+              //console.log(keys);
+            }}
+            changeFunct={(text:string)=>{console.log(text);}}/>
         </div>
       </div>
     </div>
