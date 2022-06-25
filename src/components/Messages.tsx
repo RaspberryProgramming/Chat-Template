@@ -1,14 +1,27 @@
 import React, {FC} from 'react';
 import Message from './Message';
+import {UserMessage, PublicMessage} from '../classes/Messages';
 import '../css/Messages.css';
 
-const Messages: FC = ({children}) => {
+type Props = {
+  messages: PublicMessage[];
+  username: string
+};
+
+const Messages: FC<Props> = ({children, messages, username}) => {
   return (
     <div className="Messages">
-      <Message text="Hello World" author="Bob" self={false}/>
-      <Message text="I found the code bob" author="Cheeseits" self={false}/>
-      <Message text="Howdy" author="Me" self={true}/>
-      <Message text="I found the secret sauce. Do you know what it's made of?" author="Me" self={true}/>
+      {
+        messages.map(message=>{
+          return (
+            <Message
+              self={message.user===username}
+              author={message.user}
+              text={message.message}
+            />
+          );
+        })
+      }
     </div>
   );
 }

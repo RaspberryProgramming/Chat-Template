@@ -4,19 +4,20 @@ import '../css/MessageBox.css';
 type Props = {
     placeholder: string,
     changeFunct: Function,
-    keyPress: Function
+    keyPress: Function,
+    externalSubmit: Function,
 };
 
 let emptyFunct = ()=>{};
 
-const MessageBox: FC<Props> = ({children, placeholder, changeFunct=emptyFunct, keyPress=emptyFunct}) => {
+const MessageBox: FC<Props> = ({children, placeholder, changeFunct=emptyFunct, keyPress=emptyFunct, externalSubmit=emptyFunct}) => {
   const [empty, setEmpty] = useState(true);
   const [text, setText] = useState("");
   const [keys, setKeys] : [string[], Function] = useState([]);
 
   const submit = () => {
     console.info("MessageBox Submitted");
-
+    externalSubmit(text);
     setEmpty(true);
     setText("");
   };

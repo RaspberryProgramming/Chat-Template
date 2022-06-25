@@ -1,4 +1,4 @@
-import React, {FC} from 'react';
+import React, {FC, useEffect} from 'react';
 import '../css/UserList.css';
 
 type Props = {
@@ -6,6 +6,7 @@ type Props = {
 }
 
 const UserList: FC<Props> = ({children, users}) => {
+
     const list = users.map((user) => {
         //<User name={name}/>
         return <div className='user' key={user}>{user}</div>;
