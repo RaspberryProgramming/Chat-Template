@@ -15,6 +15,7 @@ const Messages: FC<Props> = ({children, messages, username}) => {
         messages.map(message=>{
           return (
             <Message
+              key={`${username}-${message.timestamp}`}
               self={message.user===username}
               author={message.user}
               text={message.message}
