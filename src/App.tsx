@@ -10,6 +10,7 @@ import React, { useState, useEffect } from 'react';
 import socketIOClient, { Socket } from 'socket.io-client';
 import { DefaultEventsMap } from "@socket.io/component-emitter";
 import {UserMessage, PublicMessage} from './classes/Messages';
+import LoginModal from './components/LoginModal';
 
 const ENDPOINT = "http://localhost:40412";
 
@@ -21,6 +22,14 @@ function App() {
   const [publicMessages, setPublicMessages] = useState<PublicMessage[]>([]);
   const [conversation, setConversation] = useState<string>('');
   const [socket, setSocket] = useState<Socket<DefaultEventsMap, DefaultEventsMap>>();
+
+  let submitUsername = (val:any) => {
+    if (socket) {
+      console.log(val);
+      socket.emit('login', {"user":val});
+      setUsername(val);
+    }
+  };
 
   useEffect(() => {
     let newSocket = socketIOClient(ENDPOINT, {transports : ['websocket']});
@@ -34,9 +43,17 @@ function App() {
   
     newSocket.on('new-login', (args: any) => {
   
-      console.log(`New Login ${args.user}`)
-  
+      console.log(`New Login ${args.user}`);
+      
       setOnlineUsers(onlineUsers=>[...onlineUsers, args.user]);
+  
+    });
+
+    newSocket.on('user-disconnect', (args: any) => {
+  
+      console.log(`${args.user} Disconnected`);
+      
+      setOnlineUsers(onlineUsers=>onlineUsers.filter(v=>v!==args.user));
   
     });
   
@@ -56,32 +73,11 @@ function App() {
     return () => {newSocket.close()};
   }, [setSocket]);
 
-  /*socket.on('login-success', (args)=>{
-      
-    console.log("Login Successful");
-
-    setOnlineUsers(args.online);
-  });
-
-  socket.on('new-login', (args)=>{
-
-    console.log(`New Login ${args.user}`)
-
-    setOnlineUsers([...onlineUsers, args.user]);
-
-  });
-
-  socket.on('publicMessage', (args)=>{
-
-    console.log(`Received public message from ${args.user}`);
-    
-    let message = new PublicMessage(args.message, args.user, args.timestamp);
-          
-    setPublicMessages([...publicMessages, message]);
-  });*/
-
   return (
     <div className="App">
+      {
+        username===""?<LoginModal submitUsername={submitUsername}/>:""
+      }
       <Navbar>
         <NavToggle toggle={()=>{setSettingsEnabled(!settingsEnabled)}} title="Settings"/>
       </Navbar>
@@ -92,7 +88,7 @@ function App() {
           <SettingsModal
             enabled={settingsEnabled}
             toggle={()=>{setSettingsEnabled(!settingsEnabled)}}
-            submitUsername={(val:any)=>{if (socket) {console.log(val); socket.emit('login', {"user":val}); setUsername(val);}}}
+            submitUsername={submitUsername}
             />
         </div>
         <div className="col W-80">

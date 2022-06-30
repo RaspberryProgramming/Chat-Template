@@ -17,7 +17,7 @@ const Messages: FC<Props> = ({children, messages, username}) => {
             <Message
               key={`${username}-${message.timestamp}`}
               self={message.user===username}
-              author={message.user}
+              author={message.user===username?"Me":message.user}
               text={message.message}
             />
           );

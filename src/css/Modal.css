@@ -1,0 +1,40 @@
+.Modal {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top:0;
+    left:0;
+    display:flex;
+}
+
+.Modal .background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: 9;
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+    background-color:rgba(99, 99, 99, 0.5);
+
+}
+
+.Modal .content {
+    width: 25rem;
+    height: 25rem;
+    margin:auto;
+    margin-top:auto;
+    margin-left:auto;
+    z-index:11;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    background-color:white;
+    border-radius: 5px;
+    flex-direction: column;
+}
+
+.Modal .content input {
+    margin:1em;
+}

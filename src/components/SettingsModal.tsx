@@ -9,7 +9,6 @@ type Props = {
 
 const SettingsModal: FC<Props> = ({children, enabled, toggle, submitUsername}) => {
     const [username, setUsername] = useState("");
-    const [usernameSubmit, setUsernameSubmit] = useState(false);
 
     return (
         <div className={"SettingsModal "+(enabled?'enabled':'')}>
@@ -17,18 +16,15 @@ const SettingsModal: FC<Props> = ({children, enabled, toggle, submitUsername}) =
                 <button className="close" onClick={toggle}>Close</button>
                 <h1>Settings</h1>
                 <button>Dropdown</button>
-                {usernameSubmit ?
-                    (<div>{username}</div>) : (
-                    <div>
-                        <input onChange={(val)=>{setUsername(val.target.value)}}></input>
-                        <button onClick=
-                            {()=>{
-                                submitUsername(username);
-                                setUsernameSubmit(true);
-                                }}
-                            >Submit Username</button>
-                    </div>
-                )}
+                <div>
+                    <input onChange={(val)=>{setUsername(val.target.value)}}></input>
+                    <button onClick=
+                        {()=>{
+                            submitUsername(username);
+                            
+                            }}
+                        >Submit Username</button>
+                </div>
 
 
 
