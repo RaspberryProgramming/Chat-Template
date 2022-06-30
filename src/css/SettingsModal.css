@@ -1,5 +1,5 @@
 .SettingsModal {
-    width:20%;
+    width:20rem;
     height: 0;
     overflow:hidden;
     background-color: #4C9C5C;
@@ -14,7 +14,7 @@
 .SettingsModal.enabled {
     z-index: 10;
     height: 100%;
-    width:20%;
+    width:20rem;
     transition: height 500ms;
 }
 
@@ -36,6 +36,13 @@
     padding: 5px;
     display:flex;
     flex-direction: column;
+}
+
+.SettingsModal .contents .row {
+    display:flex;
+    flex-direction: row;
+    width: 100%;
+    margin:0;
 }
 
 @media only screen and (max-width: 600px) {

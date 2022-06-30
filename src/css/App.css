@@ -9,7 +9,7 @@
   scrollbar-color: #8CCC9C #9CDC9C;
 }
 
-.App * {
+* {
   box-sizing: border-box;
 }
 
@@ -30,10 +30,10 @@
 }
 
 .App .columns .W-20 {
-  width: 20%;
+  width: 20rem;
 }
 .App .columns .W-80 {
-  width: 80%;
+  width: calc(100% - 20rem);
 }
 
 @media only screen and (max-width: 600px) {

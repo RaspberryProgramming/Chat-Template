@@ -15,8 +15,7 @@ const SettingsModal: FC<Props> = ({children, enabled, toggle, submitUsername}) =
             <div className="contents">
                 <button className="close" onClick={toggle}>Close</button>
                 <h1>Settings</h1>
-                <button>Dropdown</button>
-                <div>
+                <div className="row">
                     <input onChange={(val)=>{setUsername(val.target.value)}}></input>
                     <button onClick=
                         {()=>{
