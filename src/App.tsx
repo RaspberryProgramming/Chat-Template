@@ -12,7 +12,7 @@ import { DefaultEventsMap } from "@socket.io/component-emitter";
 import {UserMessage, PublicMessage} from './classes/Messages';
 import LoginModal from './components/LoginModal';
 
-const ENDPOINT = "http://localhost:40412";
+const ENDPOINT = "http://messageapi.camscode.com:40412";
 
 function App() {
   const [settingsEnabled, setSettingsEnabled] = useState(false);
@@ -24,9 +24,13 @@ function App() {
   const [socket, setSocket] = useState<Socket<DefaultEventsMap, DefaultEventsMap>>();
 
   let submitUsername = (val:any) => {
+    console.log(`Logging in as ${val}`);
+
     if (socket) {
       console.log(val);
+      
       socket.emit('login', {"user":val});
+
       setUsername(val);
     }
   };
@@ -88,8 +92,9 @@ function App() {
           <SettingsModal
             enabled={settingsEnabled}
             toggle={()=>{setSettingsEnabled(!settingsEnabled)}}
-            submitUsername={submitUsername}
-            />
+            submitUsername={(val: any) => {
+              submitUsername(val);
+            }}/>
         </div>
         <div className="col W-80">
           <Messages messages={publicMessages} username={username}/>
