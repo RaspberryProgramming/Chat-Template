@@ -12,7 +12,7 @@ import { DefaultEventsMap } from "@socket.io/component-emitter";
 import {UserMessage, PublicMessage} from './classes/Messages';
 import LoginModal from './components/LoginModal';
 
-const ENDPOINT = "http://messageapi.camscode.com:40412";
+const ENDPOINT = "https://messageapi.camscode.com:40412";
 
 function App() {
   const [settingsEnabled, setSettingsEnabled] = useState(false);
