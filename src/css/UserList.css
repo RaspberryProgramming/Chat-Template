@@ -24,7 +24,6 @@
     flex-grow:1;
     display:flex;
     flex-direction: column;
-    overflow-y: scroll;
     font-size: 22px;
     scrollbar-color: #7CBC8C #8CCC9C;
 }
