@@ -11,8 +11,9 @@ import socketIOClient, { Socket } from 'socket.io-client';
 import { DefaultEventsMap } from "@socket.io/component-emitter";
 import {UserMessage, PublicMessage} from './classes/Messages';
 import LoginModal from './components/LoginModal';
+import config from './config.json';
 
-const ENDPOINT = "https://messageapi.camscode.com:40412";
+const ENDPOINT = config.ENDPOINT;
 
 function App() {
   const [settingsEnabled, setSettingsEnabled] = useState(false);
