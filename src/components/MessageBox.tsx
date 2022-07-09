@@ -1,5 +1,6 @@
 import React, {FC, useState} from 'react';
 import '../css/MessageBox.css';
+import chevronIcon from '../icons/chevron-double-right.svg';
 
 type Props = {
     placeholder: string,
@@ -65,6 +66,9 @@ const MessageBox: FC<Props> = ({children, placeholder, changeFunct=emptyFunct, k
         value={text}
         onKeyDown={onKeyDown}
         onKeyUp={onKeyUp}/>
+      <button className="submitBtn" onClick={submit}>
+        <img src={chevronIcon} alt="send"/>
+      </button>
     </div>
   );
 }

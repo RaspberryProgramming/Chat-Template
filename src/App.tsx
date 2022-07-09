@@ -9,7 +9,7 @@ import NavToggle from './components/NavToggle';
 import React, { useState, useEffect } from 'react';
 import socketIOClient, { Socket } from 'socket.io-client';
 import { DefaultEventsMap } from "@socket.io/component-emitter";
-import {UserMessage, PublicMessage} from './classes/Messages';
+import {PublicMessage} from './classes/Messages';
 import LoginModal from './components/LoginModal';
 import config from './config.json';
 
@@ -19,7 +19,6 @@ function App() {
   const [settingsEnabled, setSettingsEnabled] = useState(false);
   const [username, setUsername] = useState("");
   const [onlineUsers, setOnlineUsers] = useState<string[]>([]);
-  const [userMessages, setUserMessages] = useState<UserMessage[]>([]);
   const [publicMessages, setPublicMessages] = useState<PublicMessage[]>([]);
   const [conversation, setConversation] = useState<string>('');
   const [socket, setSocket] = useState<Socket<DefaultEventsMap, DefaultEventsMap>>();

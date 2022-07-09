@@ -36,6 +36,12 @@
   width: calc(100% - 20rem);
 }
 
+.App .btn, .App button {
+  background-color: #7aba7a;
+  border-style:none;
+  border-radius: 5px;
+}
+
 @media only screen and (max-width: 600px) {
   .App .columns .W-20 {
       width:0;

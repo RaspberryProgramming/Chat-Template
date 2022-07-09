@@ -22,6 +22,10 @@
     display: none;
 }
 
+.MessageBox submitBtn {
+    display: none;
+}
+
 .MessageBox .empty {
     transition: width 0.5s ease-in;
     width: 25%;
@@ -36,5 +40,17 @@
 @media only screen and (max-width: 600px) {
     .MessageBox .empty {
         width:100%;
+        margin-right: 4px;
+        margin-top: 0;
+        margin-left: 0;
+        margin-bottom: 0;
+    }
+
+    .MessageBox .submitBtn {
+        display: flex;
+        align-items: center;
+        align-content: center;
+        padding-right: 0.75rem;
+        padding-left: 0.75rem;
     }
 }
