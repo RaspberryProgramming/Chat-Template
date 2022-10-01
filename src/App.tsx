@@ -12,7 +12,7 @@ import { DefaultEventsMap } from "@socket.io/component-emitter";
 import {PublicMessage} from './classes/Messages';
 import LoginModal from './components/LoginModal';
 
-const ENDPOINT = process.env.ENDPOINT??""; // Copy environment's endpoint
+const ENDPOINT = process.env.ENDPOINT??"https://messageapi.camscode.com:40412"; // Copy environment's endpoint
 
 function App() {
   const [settingsEnabled, setSettingsEnabled] = useState(false);
