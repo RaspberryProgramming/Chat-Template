@@ -11,9 +11,8 @@ import socketIOClient, { Socket } from 'socket.io-client';
 import { DefaultEventsMap } from "@socket.io/component-emitter";
 import {PublicMessage} from './classes/Messages';
 import LoginModal from './components/LoginModal';
-import config from './config.json';
 
-const ENDPOINT = config.ENDPOINT;
+const ENDPOINT = process.env.ENDPOINT??""; // Copy environment's endpoint
 
 function App() {
   const [settingsEnabled, setSettingsEnabled] = useState(false);

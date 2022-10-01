@@ -1,6 +1,26 @@
-# Getting Started with Create React App
+# Chat Template
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a chat template made with React and Typescript. This project can be paired with [open-messaging-redis](https://github.com/RaspberryProgramming/open-messaging-redis) on my github.
+
+## Getting Started
+
+First you'll need to clone the repo
+
+`
+git clone https://github.com/RaspberryProgramming/Chat-Template
+`
+
+Next install npm packages
+
+`
+npm install
+`
+
+Then you you can start the project with
+
+`
+npm start
+`
 
 ## Available Scripts
 
@@ -44,3 +64,10 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+
+# Created By
+Camerin Figueroa
+Github: [RaspberryProgramming](https://github.com/RaspberryProgramming)
+Website: [www.camscode.com](https://www.camscode.com)
+Email: [cam@camscode.com](mailto:cam@camscode.com)
